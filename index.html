@@ -24,8 +24,16 @@
     <!-- Responsive -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
-    <style>
-
+    <style scoped>
+        @media (max-width:500px) {
+            .select-profession {
+                justify-content: center !important;
+                margin-bottom: 10px !important;
+            }
+            .select-profession select {
+                width: 75% !important;
+            }
+        }
     </style>
 
 </head>
@@ -1008,7 +1016,7 @@
 
                     <div class="conatiner">
                         <div class="row py-3">
-                            <div class="col-lg-6 col-md-6 d-flex justify-content-end">
+                            <div class="col-lg-6 select-profession col-md-6 d-flex justify-content-end">
                                 <select id="profession" onchange="populateDoctors()"
                                     class="js-example-basic-single w-50" name="state">
                                     <option>Select By Speciality</option>
@@ -1022,9 +1030,9 @@
                                     <option value="Hematology">Hematology</option>
                                 </select>
                             </div>
-                            <div class="col-lg-6 col-md-6 d-flex justify-content-start">
+                            <div class="col-lg-6 select-profession col-md-6 d-flex justify-content-start">
                                 <select id="doctor" class="js-example-basic-single w-50 " name="state">
-
+                                    <option>Select By Doctor</option>
                                 </select>
                             </div>
                         </div>
