@@ -18,9 +18,16 @@
     <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon" />
     <link rel="icon" href="images/favicon.png" type="image/x-icon" />
 
+
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+
     <!-- Responsive -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <style>
+
+    </style>
+
 </head>
 
 <body>
@@ -524,10 +531,10 @@
                                 received a diagnosis, looking for alternative treatment options or considering surgery.
                             </p>
                             <div class="d-flex justify-content-start align-items-center">
-                                <button class="theme-btn btn-style-one" style="margin-right: 10px;" >
+                                <button class="theme-btn btn-style-one" style="margin-right: 10px;">
                                     <span class="txt text-uppercase">Lets Get Started</span>
                                 </button>
-                                <button class="theme-btn btn-style-one special-btn ms-1" >
+                                <button class="theme-btn btn-style-one special-btn ms-1">
                                     <span class="txt text-uppercase">Read More</span>
                                 </button>
                             </div>
@@ -998,168 +1005,103 @@
                     <div class="icon flaticon-hospital"></div>
                     <div class="title">Our Doctors</div>
                     <h2>Meet Specialists</h2>
+
+                    <div class="conatiner">
+                        <div class="row py-3">
+                            <div class="col-lg-6 col-md-6 d-flex justify-content-end">
+                                <select id="profession" onchange="populateDoctors()"
+                                    class="js-example-basic-single w-50" name="state">
+                                    <option>Select By Speciality</option>
+                                    <option value="cardiac surgery">cardiac surgery</option>
+                                    <option value="Cardiology">Cardiology</option>
+                                    <option value="Dentist">Dentist</option>
+                                    <option value="Electrophysiology">Electrophysiology</option>
+                                    <option value="General Surgery">General Surgery</option>
+                                    <option value="Gynecologyy">Gynecology</option>
+                                    <option value="Hospice Care">Hospice Care</option>
+                                    <option value="Hematology">Hematology</option>
+                                </select>
+                            </div>
+                            <div class="col-lg-6 col-md-6 d-flex justify-content-start">
+                                <select id="doctor" class="js-example-basic-single w-50 " name="state">
+
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
                 <div class="team-carousel owl-carousel owl-theme">
-                    <!-- Team Block -->
-                    <div class="team-block">
+                    <div class="doctor-block " style="margin-left: 10px;">
                         <div class="inner-box">
-                            <div class="circle-box"></div>
                             <div class="image">
-                                <a href="#"><img src="images/resource/team-1.jpg" alt="" /></a>
+                                <img src="images/resource/doctor-1.jpg" alt="">
+                                <div class="overlay-box">
+                                    <div class="content">
+                                        <h4><a href="doctor-detail.html">Dr. Juan Annato</a></h4>
+                                        <div class="designation">Dental Specialist</div>
+                                    </div>
+                                    <ul class="social-box">
+                                        <li><a href="#" class="fab fa-facebook-f"></a></li>
+                                        <li><a href="#" class="fab fa-twitter"></a></li>
+                                        <li><a href="#" class="fab fa-linkedin"></a></li>
+                                    </ul>
+                                </div>
                             </div>
-                            <div class="content">
-                                <h4>
-                                    <a href="#detail"><span>Dr.</span> Kim Sultana</a>
-                                </h4>
-                                <div class="designation">Precnancy Specialist</div>
-                                <ul class="team-contact-list">
-                                    <li>
-                                        Phone :
-                                        <a href="tel:+44-0-131-226-2200">+44 (0) 131 226 2200</a>
-                                    </li>
-                                    <li>
-                                        Email :
-                                        <a href="mailto:info@headmedical.com">info@headmedical.com</a>
-                                    </li>
-                                </ul>
-                                <!-- Social Box -->
-                                <ul class="social-box">
-                                    <li class="facebook">
-                                        <a href="#" class="fab fa-facebook-f"></a>
-                                    </li>
-                                    <li class="twitter">
-                                        <a href="#" class="fab fa-linkedin-in"></a>
-                                    </li>
-                                    <li class="google">
-                                        <a href="#" class="fab fa-google"></a>
-                                    </li>
-                                    <li class="linkedin">
-                                        <a href="#" class="fab fa-linkedin-in"></a>
-                                    </li>
-                                </ul>
+                        </div>
+                    </div>
+                    <div class="doctor-block " style="margin-left: 10px;">
+                        <div class="inner-box">
+                            <div class="image">
+                                <img src="images/resource/doctor-1.jpg" alt="">
+                                <div class="overlay-box">
+                                    <div class="content">
+                                        <h4><a href="doctor-detail.html">Dr. Juan Annato</a></h4>
+                                        <div class="designation">Dental Specialist</div>
+                                    </div>
+                                    <ul class="social-box">
+                                        <li><a href="#" class="fab fa-facebook-f"></a></li>
+                                        <li><a href="#" class="fab fa-twitter"></a></li>
+                                        <li><a href="#" class="fab fa-linkedin"></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="doctor-block" style="margin-left: 10px;">
+                        <div class="inner-box">
+                            <div class="image">
+                                <img src="images/resource/doctor-2.jpg" alt="">
+                                <div class="overlay-box">
+                                    <div class="content">
+                                        <h4><a href="doctor-detail.html">Dr. Jaffrin Skote</a></h4>
+                                        <div class="designation">Cardiologists</div>
+                                    </div>
+                                    <ul class="social-box">
+                                        <li><a href="#" class="fab fa-facebook-f"></a></li>
+                                        <li><a href="#" class="fab fa-twitter"></a></li>
+                                        <li><a href="#" class="fab fa-linkedin"></a></li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Team Block -->
-                    <div class="team-block">
+                    <div class="doctor-block" style="margin-left: 10px;">
                         <div class="inner-box">
-                            <div class="circle-box"></div>
                             <div class="image">
-                                <a href="#"><img src="images/resource/team-2.jpg" alt="" /></a>
-                            </div>
-                            <div class="content">
-                                <h4>
-                                    <a href="#detail"><span>Dr.</span> Jorgh Mark</a>
-                                </h4>
-                                <div class="designation">Precnancy Specialist</div>
-                                <ul class="team-contact-list">
-                                    <li>
-                                        Phone :
-                                        <a href="tel:+44-0-131-226-2200">+44 (0) 131 226 2200</a>
-                                    </li>
-                                    <li>
-                                        Email :
-                                        <a href="mailto:info@headmedical.com">info@headmedical.com</a>
-                                    </li>
-                                </ul>
-                                <!-- Social Box -->
-                                <ul class="social-box">
-                                    <li class="facebook">
-                                        <a href="#" class="fab fa-facebook-f"></a>
-                                    </li>
-                                    <li class="twitter">
-                                        <a href="#" class="fab fa-linkedin-in"></a>
-                                    </li>
-                                    <li class="google">
-                                        <a href="#" class="fab fa-google"></a>
-                                    </li>
-                                    <li class="linkedin">
-                                        <a href="#" class="fab fa-linkedin-in"></a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Team Block -->
-                    <div class="team-block">
-                        <div class="inner-box">
-                            <div class="circle-box"></div>
-                            <div class="image">
-                                <a href="#"><img src="images/resource/team-1.jpg" alt="" /></a>
-                            </div>
-                            <div class="content">
-                                <h4>
-                                    <a href="#detail"><span>Dr.</span> Kim Sultana</a>
-                                </h4>
-                                <div class="designation">Precnancy Specialist</div>
-                                <ul class="team-contact-list">
-                                    <li>
-                                        Phone :
-                                        <a href="tel:+44-0-131-226-2200">+44 (0) 131 226 2200</a>
-                                    </li>
-                                    <li>
-                                        Email :
-                                        <a href="mailto:info@headmedical.com">info@headmedical.com</a>
-                                    </li>
-                                </ul>
-                                <!-- Social Box -->
-                                <ul class="social-box">
-                                    <li class="facebook">
-                                        <a href="#" class="fab fa-facebook-f"></a>
-                                    </li>
-                                    <li class="twitter">
-                                        <a href="#" class="fab fa-linkedin-in"></a>
-                                    </li>
-                                    <li class="google">
-                                        <a href="#" class="fab fa-google"></a>
-                                    </li>
-                                    <li class="linkedin">
-                                        <a href="#" class="fab fa-linkedin-in"></a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Team Block -->
-                    <div class="team-block">
-                        <div class="inner-box">
-                            <div class="circle-box"></div>
-                            <div class="image">
-                                <a href="#"><img src="images/resource/team-2.jpg" alt="" /></a>
-                            </div>
-                            <div class="content">
-                                <h4>
-                                    <a href="#detail"><span>Dr.</span> Jorgh Mark</a>
-                                </h4>
-                                <div class="designation">Precnancy Specialist</div>
-                                <ul class="team-contact-list">
-                                    <li>
-                                        Phone :
-                                        <a href="tel:+44-0-131-226-2200">+44 (0) 131 226 2200</a>
-                                    </li>
-                                    <li>
-                                        Email :
-                                        <a href="mailto:info@headmedical.com">info@headmedical.com</a>
-                                    </li>
-                                </ul>
-                                <!-- Social Box -->
-                                <ul class="social-box">
-                                    <li class="facebook">
-                                        <a href="#" class="fab fa-facebook-f"></a>
-                                    </li>
-                                    <li class="twitter">
-                                        <a href="#" class="fab fa-linkedin-in"></a>
-                                    </li>
-                                    <li class="google">
-                                        <a href="#" class="fab fa-google"></a>
-                                    </li>
-                                    <li class="linkedin">
-                                        <a href="#" class="fab fa-linkedin-in"></a>
-                                    </li>
-                                </ul>
+                                <img src="images/resource/doctor-3.jpg" alt="">
+                                <div class="overlay-box">
+                                    <div class="content">
+                                        <h4><a href="doctor-detail.html">Dr. Jonathon Deo</a></h4>
+                                        <div class="designation">Gastroenterologists</div>
+                                    </div>
+                                    <ul class="social-box">
+                                        <li><a href="#" class="fab fa-facebook-f"></a></li>
+                                        <li><a href="#" class="fab fa-twitter"></a></li>
+                                        <li><a href="#" class="fab fa-linkedin"></a></li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -1808,6 +1750,72 @@
     <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
     <script src="js/script.js"></script>
     <script src="js/color-settings.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $('.js-example-basic-single').select2();
+
+            $('#doctor').on('select2:select', function (e) {
+                var selectedOption = e.params.data;
+                var selectedText = selectedOption.text;
+                var selectedValue = selectedOption.id;
+                window.location.href = "doctor-detail.html";
+            });
+        });
+    </script>
+    <script>
+        function populateDoctors() {
+            var professionSelect = document.getElementById("profession");
+            var doctorSelect = document.getElementById("doctor");
+            doctorSelect.innerHTML = ""; // Clear previous options
+
+            // Define doctor options based on profession
+            var profession = professionSelect.value;
+            var doctors = [];
+            if (profession === "cardiac surgery") {
+                doctors = ["Dr. Smith", "Dr. Johnson", "Dr. Lee"];
+            } else if (profession === "Cardiology") {
+                doctors = ["Samir Saba"];
+            } else if (profession === "Dentist") {
+                doctors = ["Amir  Massiri"];
+            }
+            else if (profession === "Electrophysiology") {
+                doctors = ["Jhon Doe"];
+            }
+            else if (profession === "General Surgery") {
+                doctors = ["Camil Sadar"];
+            }
+            else if (profession === "Gynecology") {
+                doctors = ["Delsika Seltti"];
+            }
+            else if (profession === "Hospice Care") {
+                doctors = ["Angela Skeete"];
+            }
+            else if (profession === "Hematology") {
+                doctors = ["Mhemat Hegpur", "Berry Berman", "Archini Miani"];
+            }
+            // Add options to the doctor select element
+            doctors.forEach(function (doctor) {
+                var option = document.createElement("option");
+                option.text = doctor;
+                // option.setAttribute('onclick',`windows.location.href=${createSlug(text)}`)
+                doctorSelect.add(option);
+            });
+        }
+
+        // Populate doctors on page load
+        populateDoctors();
+        function createSlug(text) {
+            return text.toString().toLowerCase()
+                .replace(/\s+/g, '-')           // Replace spaces with -
+                .replace(/[^\w\-]+/g, '')       // Remove all non-word chars
+                .replace(/\-\-+/g, '-')         // Replace multiple - with single -
+                .replace(/^-+/, '')             // Trim - from start of text
+                .replace(/-+$/, '');            // Trim - from end of text
+        }
+
+    </script>
 </body>
 
 </html>

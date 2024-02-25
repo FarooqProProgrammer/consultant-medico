@@ -1,29 +1,38 @@
 import re
 import random
 import string
+import os
 
-def generate_css_class():
-    """Generate a random CSS class name."""
-    return ''.join(random.choices(string.ascii_lowercase, k=6))
+def generate_css_class(used_classes):
+    """Generate a random unique CSS class name."""
+    css_class = ''.join(random.choices(string.ascii_lowercase, k=6))
+    while css_class in used_classes:
+        css_class = ''.join(random.choices(string.ascii_lowercase, k=6))
+    return css_class
 
 def extract_inline_styles(html_content):
     """Extract inline style tags and their content from HTML."""
-    inline_styles = re.findall(r'<style>(.*?)</style>', html_content, re.DOTALL)
-    return inline_styles
+    return re.findall(r'<style>(.*?)</style>', html_content, re.DOTALL)
 
 def extract_style_rules(inline_styles):
     """Extract CSS rules from inline style tags."""
     style_rules = []
     for style in inline_styles:
-        style_rules.extend(re.findall(r'(.*?)\{(.*?)\}', style))
+        style_rules.extend(re.findall(r'([^{}]+)\s*\{([^{}]+)\}', style))
     return style_rules
 
 def write_to_css_file(style_rules):
     """Write CSS rules to a CSS file."""
-    with open('css/style.css', 'a') as css_file:
+    css_file_path = 'css/style.css'
+    if os.path.exists(css_file_path):
+        os.remove(css_file_path)
+    
+    used_classes = set()
+    with open(css_file_path, 'a') as css_file:
         for selector, rules in style_rules:
-            css_class = generate_css_class()
-            css_file.write(f".{css_class} {rules}\n")
+            css_class = generate_css_class(used_classes)
+            used_classes.add(css_class)
+            css_file.write(f".{css_class} {{{rules}}}\n")
             yield css_class, selector
 
 def update_html_with_classes(html_content, css_classes):
@@ -51,7 +60,7 @@ def main():
     updated_html = update_html_with_classes(html_content, css_classes)
 
     # Write updated HTML content to file
-    with open('index.html', 'w') as updated_html_file:
+    with open('index_updated.html', 'w') as updated_html_file:
         updated_html_file.write(updated_html)
 
 if __name__ == "__main__":

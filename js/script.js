@@ -347,10 +347,10 @@
 					items:1
 				},
 				800:{
-					items:2
+					items:3
 				},
 				1024:{
-					items:2
+					items:3
 				}
 			}
 		});    		
