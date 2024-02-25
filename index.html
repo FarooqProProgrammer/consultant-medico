@@ -1756,14 +1756,11 @@
         $(document).ready(function () {
             $('.js-example-basic-single').select2();
 
-            $('#doctor').on('select2:select', function (e) {
-                var selectedOption = e.params.data;
-                var selectedText = selectedOption.text;
-                var selectedValue = selectedOption.id;
-                window.location.href = "doctor-detail.html";
+            $('#doctor').on('change', function() {
+                var selectedValue = $(this).val();
+                console.log("Selected Value:", selectedValue);
+                window.location.href = 'doctor-detail.html'
             });
-
-            console.log("")
         });
     </script>
     <script>
@@ -1778,21 +1775,21 @@
             if (profession === "cardiac surgery") {
                 doctors = ["Dr. Smith", "Dr. Johnson", "Dr. Lee"];
             } else if (profession === "Cardiology") {
-                doctors = ["Samir Saba"];
+                doctors = ["Samir Saba","Samir Saba"];
             } else if (profession === "Dentist") {
-                doctors = ["Amir  Massiri"];
+                doctors = ["Amir  Massiri","Amir Massiri"];
             }
             else if (profession === "Electrophysiology") {
-                doctors = ["Jhon Doe"];
+                doctors = ["Jhon Doe",'Jhon Doe'];
             }
             else if (profession === "General Surgery") {
-                doctors = ["Camil Sadar"];
+                doctors = ["Camil Sadar","Camil Sadar"];
             }
             else if (profession === "Gynecology") {
-                doctors = ["Delsika Seltti"];
+                doctors = ["Delsika Seltti","Delsika Seltti"];
             }
             else if (profession === "Hospice Care") {
-                doctors = ["Angela Skeete"];
+                doctors = ["Angela Skeete","Angela Skeete"];
             }
             else if (profession === "Hematology") {
                 doctors = ["Mhemat Hegpur", "Berry Berman", "Archini Miani"];
